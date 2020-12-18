@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="auraq.mapnew.Mapnew" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Mapnew</name>
+    <description>google maps</description>
+    <icon/>
+    <properties>
+            <property key="locations" type="datasource" isList="true" required="true">
+               <caption>Locations entity</caption>
+               <category>Context</category>
+               <description/>
+            </property>
+
+            <property key="lat" type="attribute" required="true" dataSource="locations">
+                <caption>Latitude attribute </caption>
+                <category>Context</category>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="lng" type="attribute" required="true" dataSource="locations">
+                <caption>Longitude attribute </caption>
+                <category>Context</category>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="markerWidth" type="attribute" required="false" dataSource="locations">
+                <caption>Marker width (pixels) </caption>
+                <category>Context</category>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            
+            <property key="markerHeight" type="attribute" required="false" dataSource="locations">
+                <caption>Marker height (pixels) </caption>
+                <category>Context</category>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="Decimal"/>
+                </attributeTypes>
+            </property>
+            <property key="svg" type="attribute" required="true" dataSource="locations">
+                <caption>Icon svg </caption>
+                <category>Context</category>
+                <description/>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="JsonMapStyle" type="string" multiline='true' required="true">
+                <caption>Map style (JSON) </caption>
+                 <category>General</category>
+                <description>Find a google map style on https://snazzymaps.com/explore</description>
+            </property>
+
+            <property key="defaultLat" type="decimal" required="true" defaultValue="51.51937904029482">
+                <caption>Default latitude </caption>
+                 <category>General</category>
+                <description></description>
+            </property>
+            
+            <property key="defaultLng" type="decimal" required="true" defaultValue="-0.10080750441811541">
+                <caption>Default longitude </caption>
+                 <category>General</category>
+                <description></description>
+            </property>
+
+            <property key="APIKey" type="string" required="true">
+                <caption>Google map API key </caption>
+                 <category>General</category>
+                <description>Your Google map API Key</description>
+            </property>
+            <property key="height" type="integer" required="true" defaultValue="400">
+                <caption>Height </caption>
+                 <category>General</category>
+                <description>The height of the widget</description>
+            </property>
+            <property key="width" type="integer" required="true" defaultValue="400">
+                <caption>Width</caption>
+                 <category>General</category>
+                <description>The width of the widget</description>
+            </property>
+    </properties>
+</widget>
